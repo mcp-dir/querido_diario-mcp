@@ -1,0 +1,34 @@
+# Smithery configuration for Querido Diário (municipal)
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_querido_diario
+
+name: querido_diario-mcp
+displayName: "Querido Diário (municipal)"
+description: >
+  Busca em diários oficiais MUNICIPAIS de milhares de prefeituras (Querido Diário / Open Knowledge Brasil) por termo ou nome, licitações, nomeações, contratos. Complementa o DJEN (judicial) na esfera municipal. Grátis, sem credencial.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/querido_diario-mcp
+repository: https://github.com/mcp-dir/querido_diario-mcp
+
+tags:
+  - querido_diario
+  - brazil
+  - med
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_querido_diario
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_querido_diario/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

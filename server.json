@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/querido_diario-mcp",
+  "title": "Querido Diário (municipal)",
+  "description": "Searches MUNICIPAL official gazettes from thousands of city halls (Querido Diário / Open Knowledge B",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/querido_diario-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_querido_diario"
+    }
+  ]
+}
